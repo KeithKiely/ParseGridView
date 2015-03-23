@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ParseGridView.iml" filepath="$PROJECT_DIR$/ParseGridView.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ParseStarterProject/Parse_GridView.iml" filepath="$PROJECT_DIR$/ParseStarterProject/Parse_GridView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ParseStarterProject/ParseStarterProject.iml" filepath="$PROJECT_DIR$/ParseStarterProject/ParseStarterProject.iml" />
     </modules>
   </component>
 </project>

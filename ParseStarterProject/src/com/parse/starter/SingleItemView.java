@@ -1,7 +1,7 @@
 package com.parse.starter;
 
 /**
- * Created by Keith on 21/03/2015.
+ * Created by Keith
  */
 import android.app.Activity;
 import android.content.Intent;

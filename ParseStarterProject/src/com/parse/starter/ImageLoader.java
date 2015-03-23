@@ -21,7 +21,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.widget.ImageView;
 /**
- * Created by Keith on 21/03/2015.
+ * Created by Keith
  */
 public class ImageLoader {
     MemoryCache memoryCache = new MemoryCache();
