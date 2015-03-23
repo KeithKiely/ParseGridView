@@ -1,0 +1,4 @@
+A:\Downloads\ChromeDownloads\ParseGridView\ParseStarterProject\build\intermediates\classes\debug
+A:\Downloads\ChromeDownloads\ParseGridView\ParseStarterProject\build\intermediates\pre-dexed\debug\bolts-android-1.1.4-a1053ee7c50f4c1d1d83604baf3a48d81ee6d874.jar
+A:\Downloads\ChromeDownloads\ParseGridView\ParseStarterProject\build\intermediates\pre-dexed\debug\ParseCrashReporting-1.8.4-9c9d7a7213950a3713873d63aefa21e126dd06dc.jar
+A:\Downloads\ChromeDownloads\ParseGridView\ParseStarterProject\build\intermediates\pre-dexed\debug\Parse-1.8.4-1abe56afb2c7a6a6d45e33fcbc8b703f34782659.jar

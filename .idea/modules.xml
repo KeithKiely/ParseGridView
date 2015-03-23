@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ParseGridView.iml" filepath="$PROJECT_DIR$/ParseGridView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ParseStarterProject/Parse_GridView.iml" filepath="$PROJECT_DIR$/ParseStarterProject/Parse_GridView.iml" />
+    </modules>
+  </component>
+</project>
+
