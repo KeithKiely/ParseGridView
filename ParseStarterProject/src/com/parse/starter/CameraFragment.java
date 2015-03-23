@@ -4,12 +4,14 @@ package com.parse.starter;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
+import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.hardware.Camera;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,6 +27,7 @@ import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.SaveCallback;
 
+@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class CameraFragment extends Fragment {
 
     public static final String TAG = "CameraFragment";
@@ -34,6 +37,7 @@ public class CameraFragment extends Fragment {
     private ParseFile photoFile;
     private ImageButton photoButton;
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent,
                              Bundle savedInstanceState) {
@@ -136,6 +140,7 @@ public class CameraFragment extends Fragment {
         photoFile = new ParseFile("image_photo.jpg", scaledData);
         photoFile.saveInBackground(new SaveCallback() {
 
+            @TargetApi(Build.VERSION_CODES.HONEYCOMB)
             public void done(ParseException e) {
                 if (e != null) {
                     Toast.makeText(getActivity(),
@@ -154,6 +159,7 @@ public class CameraFragment extends Fragment {
      * named it "NewimageFragment". Now we'll pop fragments off the back stack
      * until we reach that Fragment.
      */
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void addPhotoToimageAndReturn(ParseFile photoFile) {
         ((NewImageActivity) getActivity()).getCurrentImage().setPhotoFile(
                 photoFile);
@@ -162,6 +168,7 @@ public class CameraFragment extends Fragment {
                 FragmentManager.POP_BACK_STACK_INCLUSIVE);
     }
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     public void onResume() {
         super.onResume();
