@@ -5,7 +5,7 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
-@ParseClassName("Image")
+@ParseClassName("Images")
 public class Image extends ParseObject {
 
     public Image() {
@@ -37,11 +37,11 @@ public class Image extends ParseObject {
     }
 
     public ParseFile getPhotoFile() {
-        return getParseFile("photo");
+        return getParseFile("images");
     }
 
     public void setPhotoFile(ParseFile file) {
-        put("photo", file);
+        put("images", file);
     }
 
 }

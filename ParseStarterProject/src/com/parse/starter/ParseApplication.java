@@ -16,19 +16,20 @@ public class ParseApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
+        ParseObject.registerSubclass(Image.class);
+
         // Initialize Crash Reporting.
         ParseCrashReporting.enable(this);
 
         // Enable Local Datastore.
         Parse.enableLocalDatastore(this);
 
-        ParseObject.registerSubclass(Image.class);
         // Add your initialization code here
         Parse.initialize(this,"qCc96qf5rwxydMXeA95wweyt1L3HkdIKDF6ZQQpD","MFnf8a3skT7mTurYRDvbCSnV7kkYTtZVhqG86xkD");
 
-
         ParseUser.enableAutomaticUser();
         ParseACL defaultACL = new ParseACL();
+        ParseUser.getCurrentUser().saveInBackground();
         // Optionally enable public read access.
         // defaultACL.setPublicReadAccess(true);
         ParseACL.setDefaultACL(defaultACL, true);
