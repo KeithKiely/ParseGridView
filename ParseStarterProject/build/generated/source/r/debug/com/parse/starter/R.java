@@ -27,23 +27,24 @@ public final class R {
         public static final int temp_img=0x7f020006;
     }
     public static final class id {
-        public static final int action_favorites=0x7f08000e;
-        public static final int action_new=0x7f08000d;
-        public static final int action_refresh=0x7f08000f;
-        public static final int action_settings=0x7f08000c;
-        public static final int camera_photo_button=0x7f080002;
-        public static final int camera_surface_view=0x7f080001;
-        public static final int cancel_button=0x7f080007;
+        public static final int action_favorites=0x7f08000f;
+        public static final int action_new=0x7f08000e;
+        public static final int action_refresh=0x7f080010;
+        public static final int action_settings=0x7f08000d;
+        public static final int camera_photo_button=0x7f080003;
+        public static final int camera_preview=0x7f080001;
+        public static final int camera_surface_view=0x7f080002;
+        public static final int cancel_button=0x7f080008;
         public static final int fragmentContainer=0x7f080000;
-        public static final int gridview=0x7f08000a;
-        public static final int image=0x7f080009;
-        public static final int image_name=0x7f080003;
-        public static final int image_preview_image=0x7f080008;
-        public static final int menu_title=0x7f080010;
-        public static final int phone=0x7f08000b;
-        public static final int photo_button=0x7f080005;
-        public static final int rating_spinner=0x7f080004;
-        public static final int save_button=0x7f080006;
+        public static final int gridview=0x7f08000b;
+        public static final int image=0x7f08000a;
+        public static final int image_name=0x7f080004;
+        public static final int image_preview_image=0x7f080009;
+        public static final int menu_title=0x7f080011;
+        public static final int phone=0x7f08000c;
+        public static final int photo_button=0x7f080006;
+        public static final int rating_spinner=0x7f080005;
+        public static final int save_button=0x7f080007;
     }
     public static final class layout {
         public static final int activity_new_image=0x7f030000;
