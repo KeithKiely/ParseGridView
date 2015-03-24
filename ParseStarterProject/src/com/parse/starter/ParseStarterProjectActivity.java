@@ -6,9 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.GridView;
 
 import com.parse.ParseException;
@@ -35,6 +38,54 @@ public class ParseStarterProjectActivity extends Activity {
         // Execute RemoteDataTask AsyncTask
         new RemoteDataTask().execute();
 	}
+
+    //Inflate Menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_new_image, menu);
+        return true;
+    }
+
+    /*
+	 * Posting images and refreshing the list will be controlled from the Action
+	 * Bar.
+	 */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.action_refresh: {
+                //updateImageList();
+                break;
+            }
+
+            case R.id.action_favorites: {
+                showFavorites();
+                break;
+            }
+
+            case R.id.action_new: {
+                newImage();
+                break;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+/*    private void updateImageList() {
+        mainAdapter.loadObjects();
+        setListAdapter(mainAdapter);
+    }*/
+
+    private void showFavorites() {
+        /*favoritesAdapter.loadObjects();
+        setListAdapter(favoritesAdapter);*/
+    }
+
+    private void newImage() {
+        Intent i = new Intent(this, NewImageActivity.class);
+        startActivityForResult(i, 0);
+    }
 
     // RemoteDataTask AsyncTask
     private class RemoteDataTask extends AsyncTask<Void, Void, Void> {
