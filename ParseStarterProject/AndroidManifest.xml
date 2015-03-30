@@ -43,6 +43,26 @@
             android:name=".NewImageActivity"
             android:label="@string/title_activity_new_image" >
         </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="Login" >
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:label="Register" >
+        </activity>
+        <activity
+            android:name=".DispatchActivity"
+            android:label="Dispatch" >
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name=".SingleItemView"
+            android:label="Single Item View" >
+        </activity>
     </application>
 
 </manifest>

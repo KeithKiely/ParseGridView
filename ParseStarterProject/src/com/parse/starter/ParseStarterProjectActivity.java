@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.GridView;
 
 import com.parse.ParseException;
@@ -20,6 +21,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import com.parse.ParseAnalytics;
+import com.parse.ParseUser;
 
 public class ParseStarterProjectActivity extends Activity {
         // Declare Variables
@@ -32,6 +34,9 @@ public class ParseStarterProjectActivity extends Activity {
         /** Called when the activity is first created. */
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+        if (ParseUser.getCurrentUser() == null) {
+            startActivity(new Intent(this, LoginActivity.class));
+        }
 		setContentView(R.layout.main);
 
 		ParseAnalytics.trackAppOpenedInBackground(getIntent());
@@ -39,10 +44,26 @@ public class ParseStarterProjectActivity extends Activity {
         new RemoteDataTask().execute();
 	}
 
+    public void login(View view) {
+        Intent intent = new Intent(this,LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void registerUser(View view) {
+        Intent intent = new Intent(this,RegisterActivity.class);
+        startActivity(intent);
+    }
+
     //Inflate Menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_new_image, menu);
+        menu.findItem(R.id.action_settings).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            public boolean onMenuItemClick(MenuItem item) {
+                startActivity(new Intent(ParseStarterProjectActivity.this, SettingsActivity.class));
+                return true;
+            }
+        });
         return true;
     }
 
