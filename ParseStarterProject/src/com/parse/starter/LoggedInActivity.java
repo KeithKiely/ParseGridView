@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class LoggedInActivity extends Activity {
@@ -42,5 +43,17 @@ public class LoggedInActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void showPublicImages(View view) {
+        Intent intent = new Intent(this, ParseStarterProjectActivity.class);
+        intent.putExtra("isPrivate",false);
+        startActivity(intent);
+    }
+
+    public void showPrivateImages(View view) {
+        Intent intent = new Intent(this, ParseStarterProjectActivity.class);
+        intent.putExtra("isPrivate",true);
+        startActivity(intent);
     }
 }

@@ -30,6 +30,7 @@ public class ParseStarterProjectActivity extends Activity {
         ProgressDialog mProgressDialog;
         GridViewAdapter adapter;
         private List<ImageList> imageArrayList = null;
+        private boolean isPrivate;
 
         /** Called when the activity is first created. */
 	public void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,8 @@ public class ParseStarterProjectActivity extends Activity {
             startActivity(new Intent(this, LoginActivity.class));
         }
 		setContentView(R.layout.main);
+
+        isPrivate = getIntent().getBooleanExtra("isPrivate", false);
 
 		ParseAnalytics.trackAppOpenedInBackground(getIntent());
         // Execute RemoteDataTask AsyncTask
@@ -130,8 +133,11 @@ public class ParseStarterProjectActivity extends Activity {
             imageArrayList = new ArrayList<ImageList>();
             try {
                 // Locate the class table named "Images" in Parse.com
-                ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(
-                        "Images");
+                ParseQuery<ParseObject> query = ParseQuery.getQuery("Images");/*new ParseQuery<ParseObject>(
+                        "Images");*/
+                if (isPrivate) {
+                    query.whereEqualTo("private_image",true);
+                }
                 // Locate the column named "position" in Parse.com and order list
                 // by ascending
                 query.orderByAscending("position");
