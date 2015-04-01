@@ -39,8 +39,12 @@ public class ParseStarterProjectActivity extends Activity {
             startActivity(new Intent(this, LoginActivity.class));
         }
 		setContentView(R.layout.main);
-
-        isPrivate = getIntent().getBooleanExtra("isPrivate", false);
+        Intent i = getIntent();
+        if(i.getBooleanExtra("isPrivate", true)) {
+            isPrivate = true;
+        } else {
+            isPrivate = false;
+        }
 
 		ParseAnalytics.trackAppOpenedInBackground(getIntent());
         // Execute RemoteDataTask AsyncTask
@@ -137,6 +141,8 @@ public class ParseStarterProjectActivity extends Activity {
                         "Images");*/
                 if (isPrivate) {
                     query.whereEqualTo("private_image",true);
+                } else {
+                    query.whereEqualTo("private_image",false);
                 }
                 // Locate the column named "position" in Parse.com and order list
                 // by ascending

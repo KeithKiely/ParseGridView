@@ -93,8 +93,13 @@ public class NewImageFragment extends Fragment {
                 image.setAuthor(ParseUser.getCurrentUser());
 
                 // Add the rating
-                image.setRating(imageRating.getSelectedItem().toString());
-
+                //image.setRating(imageRating.getSelectedItem().toString());
+                String isPrivate = imageRating.getSelectedItem().toString();
+                if (isPrivate.equals("Private Image")) {
+                    image.setPrivacyStatus(true);
+                } else {
+                    image.setPrivacyStatus(false);
+                }
                 // If the user added a photo, that data will be
                 // added in the CameraFragment
 

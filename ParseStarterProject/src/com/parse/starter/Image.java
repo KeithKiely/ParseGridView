@@ -28,7 +28,7 @@ public class Image extends ParseObject {
         put("author", user);
     }
 
-    public String getRating() {
+    public String getRating(String s) {
         return getString("rating");
     }
 
@@ -42,6 +42,14 @@ public class Image extends ParseObject {
 
     public void setPhotoFile(ParseFile file) {
         put("images", file);
+    }
+
+    public void setPrivacyStatus(boolean status ) {
+        put("private_image", status);
+    }
+
+    public boolean getPrivacyStatus() {
+        return getBoolean("private_image");
     }
 
 }

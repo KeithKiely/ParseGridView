@@ -121,7 +121,7 @@ public class CameraFragment extends Fragment {
 
         // Resize photo from camera byte array
         Bitmap imageImage = BitmapFactory.decodeByteArray(data, 0, data.length);
-        Bitmap imageImageScaled = Bitmap.createScaledBitmap(imageImage, 200, 200
+        Bitmap imageImageScaled = Bitmap.createScaledBitmap(imageImage, 400, 400
                 * imageImage.getHeight() / imageImage.getWidth(), false);
 
         // Override Android default landscape orientation and save portrait
