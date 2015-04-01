@@ -40,14 +40,14 @@ public final class R {
         public static final int emailET=0x7f08000a;
         public static final int fragmentContainer=0x7f080008;
         public static final int gridview=0x7f08001b;
-        public static final int image=0x7f08001a;
+        public static final int image=0x7f08001c;
         public static final int image_name=0x7f080018;
         public static final int image_preview_image=0x7f080015;
         public static final int loginButton=0x7f080006;
         public static final int logout_button=0x7f08000f;
         public static final int menu_title=0x7f080021;
         public static final int passwordET=0x7f080005;
-        public static final int phone=0x7f08001c;
+        public static final int phone=0x7f08001a;
         public static final int photo_button=0x7f080016;
         public static final int privateGalleryButton=0x7f080000;
         public static final int publicGalleryButton=0x7f080001;

@@ -55,7 +55,7 @@ public class GridViewAdapter extends BaseAdapter {
         final ViewHolder holder;
         if (view == null) {
             holder = new ViewHolder();
-            view = inflater.inflate(R.layout.gridview_item, null);
+            view = inflater.inflate(R.layout.singleitemview, null);
             // Locate the ImageView in gridview_item.xml
             holder.image = (ImageView) view.findViewById(R.id.image);
             view.setTag(holder);
