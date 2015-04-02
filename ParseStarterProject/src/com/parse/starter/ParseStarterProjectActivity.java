@@ -83,7 +83,7 @@ public class ParseStarterProjectActivity extends Activity {
         switch (item.getItemId()) {
 
             case R.id.action_refresh: {
-                //updateImageList();
+                updateImageList();
                 break;
             }
 
@@ -100,10 +100,16 @@ public class ParseStarterProjectActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-/*    private void updateImageList() {
-        mainAdapter.loadObjects();
-        setListAdapter(mainAdapter);
-    }*/
+    private void updateImageList() {
+        /*mainAdapter.loadObjects();
+        setListAdapter(mainAdapter);*/
+        //gridview.setAdapter(adapter);
+
+        adapter.notifyDataSetChanged();
+        gridview.invalidate();
+        gridview.setAdapter(adapter);
+
+    }
 
     private void showFavorites() {
         /*favoritesAdapter.loadObjects();
