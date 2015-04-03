@@ -103,12 +103,6 @@ public class ParseStarterProjectActivity extends Activity {
     private void updateImageList() {
         /*mainAdapter.loadObjects();
         setListAdapter(mainAdapter);*/
-        //gridview.setAdapter(adapter);
-
-        adapter.notifyDataSetChanged();
-        gridview.invalidate();
-        gridview.setAdapter(adapter);
-
     }
 
     private void showFavorites() {
