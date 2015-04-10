@@ -136,7 +136,7 @@ public class CameraFragment extends Fragment {
 
         byte[] scaledData = bos.toByteArray();
 
-        // Save the scaled image to Parse
+        //Save the scaled image to Parse
         photoFile = new ParseFile("image_photo.jpg", scaledData);
         photoFile.saveInBackground(new SaveCallback() {
 

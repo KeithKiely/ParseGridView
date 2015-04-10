@@ -42,6 +42,7 @@
     <string name="image_caption">Add image caption</string>
     <string name="Private">Private Image</string>
     <string name="open_camera">Open Camera</string>
+    <string name="choose_action">Choose</string>
 
     <string-array name="ratings_array">
         <item>Private Image</item>

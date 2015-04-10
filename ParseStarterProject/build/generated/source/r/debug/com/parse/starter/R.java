@@ -9,7 +9,8 @@ package com.parse.starter;
 
 public final class R {
     public static final class array {
-        public static final int ratings_array=0x7f040000;
+        public static final int intent_array=0x7f040000;
+        public static final int ratings_array=0x7f040001;
     }
     public static final class attr {
     }
@@ -89,37 +90,38 @@ public final class R {
         public static final int action_settings=0x7f060005;
         public static final int app_name=0x7f060006;
         public static final int cancel_button_text=0x7f060007;
-        public static final int email=0x7f060008;
-        public static final int emailHint=0x7f060009;
-        public static final int error_blank_password=0x7f06000a;
-        public static final int error_blank_username=0x7f06000b;
-        public static final int error_end=0x7f06000c;
-        public static final int error_intro=0x7f06000d;
-        public static final int error_join=0x7f06000e;
-        public static final int error_mismatched_passwords=0x7f06000f;
-        public static final int hello_blank_fragment=0x7f060010;
-        public static final int image_caption=0x7f060011;
-        public static final int image_label=0x7f060012;
-        public static final int logged_in=0x7f060013;
-        public static final int logout_full=0x7f060014;
-        public static final int menu_settings=0x7f060015;
-        public static final int menu_title=0x7f060016;
-        public static final int open_camera=0x7f060017;
-        public static final int parse_app_id=0x7f060018;
-        public static final int parse_client_key=0x7f060019;
-        public static final int password=0x7f06001a;
-        public static final int passwordHint=0x7f06001b;
-        public static final int private_gallery=0x7f06001c;
-        public static final int progress_login=0x7f06001d;
-        public static final int progress_signup=0x7f06001e;
-        public static final int public_gallery=0x7f06001f;
-        public static final int register=0x7f060020;
-        public static final int repeat_password_hint=0x7f060021;
-        public static final int save_button_text=0x7f060022;
-        public static final int title_activity_main=0x7f060023;
-        public static final int title_activity_new_image=0x7f060024;
-        public static final int title_activity_settings=0x7f060025;
-        public static final int username=0x7f060026;
-        public static final int usernameHint=0x7f060027;
+        public static final int choose_action=0x7f060008;
+        public static final int email=0x7f060009;
+        public static final int emailHint=0x7f06000a;
+        public static final int error_blank_password=0x7f06000b;
+        public static final int error_blank_username=0x7f06000c;
+        public static final int error_end=0x7f06000d;
+        public static final int error_intro=0x7f06000e;
+        public static final int error_join=0x7f06000f;
+        public static final int error_mismatched_passwords=0x7f060010;
+        public static final int hello_blank_fragment=0x7f060011;
+        public static final int image_caption=0x7f060012;
+        public static final int image_label=0x7f060013;
+        public static final int logged_in=0x7f060014;
+        public static final int logout_full=0x7f060015;
+        public static final int menu_settings=0x7f060016;
+        public static final int menu_title=0x7f060017;
+        public static final int open_camera=0x7f060018;
+        public static final int parse_app_id=0x7f060019;
+        public static final int parse_client_key=0x7f06001a;
+        public static final int password=0x7f06001b;
+        public static final int passwordHint=0x7f06001c;
+        public static final int private_gallery=0x7f06001d;
+        public static final int progress_login=0x7f06001e;
+        public static final int progress_signup=0x7f06001f;
+        public static final int public_gallery=0x7f060020;
+        public static final int register=0x7f060021;
+        public static final int repeat_password_hint=0x7f060022;
+        public static final int save_button_text=0x7f060023;
+        public static final int title_activity_main=0x7f060024;
+        public static final int title_activity_new_image=0x7f060025;
+        public static final int title_activity_settings=0x7f060026;
+        public static final int username=0x7f060027;
+        public static final int usernameHint=0x7f060028;
     }
 }
