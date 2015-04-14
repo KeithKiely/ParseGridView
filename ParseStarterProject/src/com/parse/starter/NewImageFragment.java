@@ -54,7 +54,7 @@ public class NewImageFragment extends Fragment {
     private Button saveButton;
     private Button cancelButton;
     private TextView imageName;
-    private Spinner imageRating;
+    private Spinner imagePrivacy;
     private ParseImageView imagePreview;
     private final int SELECT_PHOTO = 1;
     private Image image;
@@ -64,6 +64,7 @@ public class NewImageFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    //Inflates the new image view for editing image details
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent,
                              Bundle SavedInstanceState) {
@@ -71,13 +72,13 @@ public class NewImageFragment extends Fragment {
 
         imageName = ((EditText) v.findViewById(R.id.image_name));
 
-        // The imageRating spinner lets people assign privacy of images they've
+        // The imagePrivacy spinner lets people assign privacy of images they've
         // are uploading.
-        imageRating = ((Spinner) v.findViewById(R.id.rating_spinner));
+        imagePrivacy = ((Spinner) v.findViewById(R.id.rating_spinner));
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter
                 .createFromResource(getActivity(), R.array.ratings_array,
                         android.R.layout.simple_spinner_dropdown_item);
-        imageRating.setAdapter(spinnerAdapter);
+        imagePrivacy.setAdapter(spinnerAdapter);
 
         photoButton = ((ImageButton) v.findViewById(R.id.photo_button));
         photoButton.setOnClickListener(new View.OnClickListener() {
@@ -102,8 +103,8 @@ public class NewImageFragment extends Fragment {
                 image.setAuthor(ParseUser.getCurrentUser());
 
                 // Add the rating
-                //image.setRating(imageRating.getSelectedItem().toString());
-                String isPrivate = imageRating.getSelectedItem().toString();
+                //image.setRating(imagePrivacy.getSelectedItem().toString());
+                String isPrivate = imagePrivacy.getSelectedItem().toString();
                 if (isPrivate.equals("Private Image")) {
                     image.setPrivacyStatus(true);
                 } else {
@@ -180,6 +181,10 @@ public class NewImageFragment extends Fragment {
         alertDialogBuilder.show();
     }
 
+    /*
+     * Receives an image from the local gallery and uploads it to parse
+     * Compresses the image, Adds it to the image preview
+     */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR1)
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
@@ -230,10 +235,9 @@ public class NewImageFragment extends Fragment {
     }
 
     /*
-     * Once the photo has saved successfully, we're ready to return to the
-     * NewimageFragment. When we added the CameraFragment to the back stack, we
-     * named it "NewimageFragment". Now we'll pop fragments off the back stack
-     * until we reach that Fragment.
+     * When the image is saved successfully, we're return to the NewimageFragment.
+     * We look for the fragment we added earlier called "NewimageFragment". which is
+     * a CameraFragment.We pop fragments off the stack until we reach that Fragment.
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void addPhotoToimageAndReturn(ParseFile photoFile) {
@@ -245,10 +249,9 @@ public class NewImageFragment extends Fragment {
     }
 
     /*
-     * All data entry about a image object is managed from the NewimageActivity.
-     * When the user wants to add a photo, we'll start up a custom
-     * CameraFragment that will let them take the photo and save it to the image
-     * object owned by the NewimageActivity. Create a new CameraFragment, swap
+     * NewImageActivity manages all image data. When adding a image, a custom
+     * CameraFragment is started that will take the photo and save it to the
+     * image object owned by the NewImageActivity. Create a new CameraFragment, swap
      * the contents of the fragmentContainer (see activity_new_imagee.xml), then
      * add the NewimageFragment to the back stack so we can return to it when the
      * camera is finished.
@@ -263,9 +266,9 @@ public class NewImageFragment extends Fragment {
     }
 
     /*
-     * On resume, check and see if a Image photo has been set from the
-     * CameraFragment. If it has, load the image in this fragment and make the
-     * preview image visible.
+     * On resume, check if an Image has been passed from the CameraFragment.
+     * If it has, load the image into the fragment and make the preview image
+     * visible.
      */
     @Override
     public void onResume() {
