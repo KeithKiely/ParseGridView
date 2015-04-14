@@ -31,7 +31,7 @@
     <string name="progress_login">Loggin in</string>
     <string name="error_mismatched_passwords">passwords don\'t match</string>
     <string name="progress_signup">Creating account</string>
-    <string name="logged_in">Logged In</string>
+    <string name="logged_in">Digital Portfolio</string>
     <string name="email">Email:</string>
     <string name="emailHint">Enter Email</string>
     <string name="repeat_password_hint">Repeat Password</string>
