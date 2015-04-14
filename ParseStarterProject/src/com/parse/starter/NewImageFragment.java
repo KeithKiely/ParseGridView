@@ -73,9 +73,8 @@ public class NewImageFragment extends Fragment {
 
         imageName = ((EditText) v.findViewById(R.id.image_name));
 
-        // The imageRating spinner lets people assign favorites of images they've
-        // eaten.
-        // images with 4 or 5 ratings will appear in the Favorites view.
+        // The imageRating spinner lets people assign privacy of images they've
+        // are uploading.
         imageRating = ((Spinner) v.findViewById(R.id.rating_spinner));
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter
                 .createFromResource(getActivity(), R.array.ratings_array,

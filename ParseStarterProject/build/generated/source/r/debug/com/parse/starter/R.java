@@ -25,7 +25,9 @@ public final class R {
         public static final int ic_action_refresh=0x7f020003;
         public static final int ic_action_search=0x7f020004;
         public static final int ic_launcher=0x7f020005;
-        public static final int temp_img=0x7f020006;
+        public static final int private_gallery=0x7f020006;
+        public static final int public_gallery=0x7f020007;
+        public static final int temp_img=0x7f020008;
     }
     public static final class id {
         public static final int action_favorites=0x7f08001f;
@@ -42,6 +44,8 @@ public final class R {
         public static final int fragmentContainer=0x7f080008;
         public static final int gridview=0x7f08001b;
         public static final int image=0x7f08001c;
+        public static final int imageButton=0x7f080000;
+        public static final int imageButton2=0x7f080001;
         public static final int image_name=0x7f080018;
         public static final int image_preview_image=0x7f080015;
         public static final int loginButton=0x7f080006;
@@ -50,8 +54,6 @@ public final class R {
         public static final int passwordET=0x7f080005;
         public static final int phone=0x7f08001a;
         public static final int photo_button=0x7f080016;
-        public static final int privateGalleryButton=0x7f080000;
-        public static final int publicGalleryButton=0x7f080001;
         public static final int rating_spinner=0x7f080013;
         public static final int registerButton=0x7f080007;
         public static final int repeatPasswordET=0x7f08000c;
@@ -118,10 +120,11 @@ public final class R {
         public static final int register=0x7f060021;
         public static final int repeat_password_hint=0x7f060022;
         public static final int save_button_text=0x7f060023;
-        public static final int title_activity_main=0x7f060024;
-        public static final int title_activity_new_image=0x7f060025;
-        public static final int title_activity_settings=0x7f060026;
-        public static final int username=0x7f060027;
-        public static final int usernameHint=0x7f060028;
+        public static final int take_picture=0x7f060024;
+        public static final int title_activity_main=0x7f060025;
+        public static final int title_activity_new_image=0x7f060026;
+        public static final int title_activity_settings=0x7f060027;
+        public static final int username=0x7f060028;
+        public static final int usernameHint=0x7f060029;
     }
 }

@@ -8,7 +8,10 @@
         android:id="@+id/rating_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/add_image" />
+        android:layout_below="@+id/add_image"
+        android:layout_alignLeft="@+id/image_preview_image"
+        android:layout_alignStart="@+id/image_preview_image"
+        android:layout_marginTop="38dp" />
 
     <com.parse.ParseImageView
         android:id="@+id/image_preview_image"
