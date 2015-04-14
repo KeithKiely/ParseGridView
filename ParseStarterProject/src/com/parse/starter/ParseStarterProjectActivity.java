@@ -1,6 +1,7 @@
 package com.parse.starter;
 /**
  * Created by Keith
+ * Application entry point
  */
 import java.util.ArrayList;
 import java.util.List;
@@ -35,33 +36,36 @@ public class ParseStarterProjectActivity extends Activity {
         /** Called when the activity is first created. */
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+        //Check to see if a user is logged in
         if (ParseUser.getCurrentUser() == null) {
             startActivity(new Intent(this, LoginActivity.class));
         }
 		setContentView(R.layout.main);
         Intent i = getIntent();
+        // If isPrivate is set to through Public gallery is loaded. Private gallery for false
         if(i.getBooleanExtra("isPrivate", true)) {
             isPrivate = true;
         } else {
             isPrivate = false;
         }
-
 		ParseAnalytics.trackAppOpenedInBackground(getIntent());
         // Execute RemoteDataTask AsyncTask
         new RemoteDataTask().execute();
 	}
 
+    //Opens the login screen
     public void login(View view) {
         Intent intent = new Intent(this,LoginActivity.class);
         startActivity(intent);
     }
 
+    //Opens the register screen
     public void registerUser(View view) {
         Intent intent = new Intent(this,RegisterActivity.class);
         startActivity(intent);
     }
 
-    //Inflate Menu
+    //Inflate Menu which contains app settings & add photo button
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_new_image, menu);
@@ -81,14 +85,9 @@ public class ParseStarterProjectActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-
+            //Refresh images, TODO: Not working properly
             case R.id.action_refresh: {
                 updateImageList();
-                break;
-            }
-
-            case R.id.action_favorites: {
-                showFavorites();
                 break;
             }
 
@@ -105,11 +104,9 @@ public class ParseStarterProjectActivity extends Activity {
         setListAdapter(mainAdapter);*/
     }
 
-    private void showFavorites() {
-        /*favoritesAdapter.loadObjects();
-        setListAdapter(favoritesAdapter);*/
-    }
-
+    /**
+     * Starts an intent to allow a user to add a new image
+     */
     private void newImage() {
         Intent i = new Intent(this, NewImageActivity.class);
         startActivityForResult(i, 0);
@@ -123,7 +120,7 @@ public class ParseStarterProjectActivity extends Activity {
             // Create a progressdialog
             mProgressDialog = new ProgressDialog(ParseStarterProjectActivity.this);
             // Set progressdialog title
-            mProgressDialog.setTitle("Parse.com GridView Tutorial");
+            mProgressDialog.setTitle("DigitalPortfolio");
             // Set progressdialog message
             mProgressDialog.setMessage("Loading...");
             mProgressDialog.setIndeterminate(false);
@@ -136,16 +133,15 @@ public class ParseStarterProjectActivity extends Activity {
             // Create the array
             imageArrayList = new ArrayList<ImageList>();
             try {
-                // Locate the class table named "Images" in Parse.com
-                ParseQuery<ParseObject> query = ParseQuery.getQuery("Images");/*new ParseQuery<ParseObject>(
-                        "Images");*/
+                // Locate the class "Images" on Parse.com
+                ParseQuery<ParseObject> query = ParseQuery.getQuery("Images");
                 if (isPrivate) {
                     query.whereEqualTo("private_image",true);
                 } else {
                     query.whereEqualTo("private_image",false);
                 }
-                // Locate the column named "position" in Parse.com and order list
-                // by ascending
+                // On Parse.com and order the table "position"
+                // by ascending order
                 query.orderByAscending("position");
                 ob = query.find();
                 for (ParseObject country : ob) {
