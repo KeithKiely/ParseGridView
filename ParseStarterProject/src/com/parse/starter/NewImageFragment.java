@@ -196,7 +196,7 @@ public class NewImageFragment extends Fragment {
                         final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                         ByteArrayOutputStream os = new ByteArrayOutputStream();
-                        selectedImage.compress( Bitmap.CompressFormat.JPEG,50,os);
+                        selectedImage.compress( Bitmap.CompressFormat.JPEG,60,os);
                         //Convert Bitmap to byte array
                         byte[] bitArray = os.toByteArray();
                         photoFile = new ParseFile("image_photo",bitArray);

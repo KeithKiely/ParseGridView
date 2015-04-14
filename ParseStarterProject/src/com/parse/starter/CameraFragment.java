@@ -41,10 +41,12 @@ public class CameraFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent,
                              Bundle savedInstanceState) {
+        //Inflates camera Fragment to allow the user to take a picture
         View v = inflater.inflate(R.layout.fragment_camera, parent, false);
-
+        //Assigns the camera button
         photoButton = (ImageButton) v.findViewById(R.id.camera_photo_button);
 
+        //Check to see if the device has a camera and alerts the user if a camera isn't present
         if (camera == null) {
             try {
                 camera = Camera.open();
@@ -56,22 +58,18 @@ public class CameraFragment extends Fragment {
                         Toast.LENGTH_LONG).show();
             }
         }
-
+        //on click listener that takes a photo and passes it to savedScaledPhoto method
         photoButton.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 if (camera == null)
                     return;
                 camera.takePicture(new Camera.ShutterCallback() {
-
                     @Override
                     public void onShutter() {
-                        // nothing to do
+                        // nothing to do not playing shot audio
                     }
-
                 }, null, new Camera.PictureCallback() {
-
                     @Override
                     public void onPictureTaken(byte[] data, Camera camera) {
                         saveScaledPhoto(data);
@@ -82,10 +80,10 @@ public class CameraFragment extends Fragment {
             }
         });
 
+        //ImageView that displays what the camera sees
         surfaceView = (SurfaceView) v.findViewById(R.id.camera_surface_view);
         SurfaceHolder holder = surfaceView.getHolder();
         holder.addCallback(new Callback() {
-
             public void surfaceCreated(SurfaceHolder holder) {
                 try {
                     if (camera != null) {
@@ -121,7 +119,7 @@ public class CameraFragment extends Fragment {
 
         // Resize photo from camera byte array
         Bitmap imageImage = BitmapFactory.decodeByteArray(data, 0, data.length);
-        Bitmap imageImageScaled = Bitmap.createScaledBitmap(imageImage, 400, 400
+        /*Bitmap imageImageScaled = Bitmap.createScaledBitmap(imageImage, 500, 500
                 * imageImage.getHeight() / imageImage.getWidth(), false);
 
         // Override Android default landscape orientation and save portrait
@@ -129,10 +127,10 @@ public class CameraFragment extends Fragment {
         matrix.postRotate(90);
         Bitmap rotatedScaledimageImage = Bitmap.createBitmap(imageImageScaled, 0,
                 0, imageImageScaled.getWidth(), imageImageScaled.getHeight(),
-                matrix, true);
+                matrix, true);*/
 
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        rotatedScaledimageImage.compress(Bitmap.CompressFormat.JPEG, 100, bos);
+        imageImage.compress(Bitmap.CompressFormat.JPEG, 80, bos);
 
         byte[] scaledData = bos.toByteArray();
 

@@ -10,8 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/add_image"
         android:layout_alignLeft="@+id/image_preview_image"
-        android:layout_alignStart="@+id/image_preview_image"
-        android:layout_marginTop="38dp" />
+        android:layout_alignStart="@+id/image_preview_image" />
 
     <com.parse.ParseImageView
         android:id="@+id/image_preview_image"
@@ -63,7 +62,9 @@
         android:layout_gravity="right"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/photo_button"
-        android:layout_toEndOf="@+id/photo_button" />
+        android:layout_toEndOf="@+id/photo_button"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="8dp" />
 
     <Button
         android:id="@+id/cancel_button"
@@ -73,6 +74,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/photo_button"
-        android:layout_toStartOf="@+id/photo_button" />
+        android:layout_toStartOf="@+id/photo_button"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="8dp" />
 
 </RelativeLayout>
