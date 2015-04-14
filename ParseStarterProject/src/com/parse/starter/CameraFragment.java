@@ -1,6 +1,10 @@
 package com.parse.starter;
 
-
+/*
+ * Camera Fragment controlls the camera, it allows the user
+ * to take a picture. It thens passes it back to NewImageFragment
+ * for further editing.
+ */
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
@@ -119,6 +123,8 @@ public class CameraFragment extends Fragment {
 
         // Resize photo from camera byte array
         Bitmap imageImage = BitmapFactory.decodeByteArray(data, 0, data.length);
+
+        //Only used if images are being scaled
         /*Bitmap imageImageScaled = Bitmap.createScaledBitmap(imageImage, 500, 500
                 * imageImage.getHeight() / imageImage.getWidth(), false);
 
@@ -152,9 +158,9 @@ public class CameraFragment extends Fragment {
     }
 
     /*
-     * Once the photo has saved successfully, we're ready to return to the
-     * NewimageFragment. When we added the CameraFragment to the back stack, we
-     * named it "NewimageFragment". Now we'll pop fragments off the back stack
+     * Once the image has saved, we're return to NewimageFragment.
+     * The CameraFragment is added to the back stack, we named it
+     * "NewimageFragment". Now we'll pop fragments off the back stack
      * until we reach that Fragment.
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)

@@ -41,12 +41,10 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 
 /*
- * This fragment manages the data entry for a
- * new image object. It lets the user input a
- * image name, give it a rating, and take a
- * photo. If there is already a photo associated
- * with this image, it will be displayed in the
- * preview at the bottom, which is a standalone
+ * This fragment manages the data entry for a new image object.
+ * The user can input an image name, give it a privacy setting(Asign an album),
+ * and take a picture. If there is already a photo associated with this image,
+ * it will be displayed in the preview at the bottom, which is a standalone
  * ParseImageView.
  */
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -213,20 +211,6 @@ public class NewImageFragment extends Fragment {
                                 }
                             }
                         });
-                        /*BitmapFactory.decodeByteArray(bitArray, 0, bitArray.length);
-
-                        //calculate how many bytes our image consists of.
-                        int bytes = selectedImage.getByteCount();
-                        //or we can calculate bytes this way. Use a different value than 4 if you don't use 32bit images.
-                        //int bytes = b.getWidth()*b.getHeight()*4;
-
-                        ByteBuffer buffer = ByteBuffer.allocate(bytes); //Create a new buffer
-                        selectedImage.copyPixelsToBuffer(buffer); //Move the byte data to the buffer
-
-                        byte[] array = buffer.array(); //Get the underlying array containing the data.
-
-                        //Saving the Image to parse*/
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                         //Bitmap of image being displayed on phone
                         imagePreview.setImageBitmap(selectedImage);
