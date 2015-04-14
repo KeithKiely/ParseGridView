@@ -5,6 +5,9 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
+/**
+ * Blueprint For images
+ */
 @ParseClassName("Images")
 public class Image extends ParseObject {
 

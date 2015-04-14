@@ -2,6 +2,7 @@ package com.parse.starter;
 
 /**
  * Created by Keith
+ * Creates a custom gallery to display images in a grid
  */
 import java.util.ArrayList;
 import java.util.List;
@@ -41,16 +42,23 @@ public class GridViewAdapter extends BaseAdapter {
         return imagearraylist.size();
     }
 
+    /*
+     * Returns an item at the given position
+     */
     @Override
     public Object getItem(int position) {
         return imagearraylist.get(position);
     }
 
+    /*
+     * Returns the items ID
+     */
     @Override
     public long getItemId(int position) {
         return position;
     }
 
+    //Allows the user to interact with the images that are displayed in the grid
     public View getView(final int position, View view, ViewGroup parent) {
         final ViewHolder holder;
         if (view == null) {

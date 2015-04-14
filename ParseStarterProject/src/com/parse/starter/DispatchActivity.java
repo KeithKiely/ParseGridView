@@ -7,8 +7,8 @@ import android.os.Bundle;
 import com.parse.ParseUser;
 
 /**
- * Activity which starts an intent for either the logged in (MainActivity) or logged out
- * (SignUpOrLoginActivity) activity.
+ * This Activity starts an intent for either a user that's
+ * logged in (MainActivity) or logged out (SignUpOrLoginActivity) activity.
  */
 public class DispatchActivity extends Activity {
 

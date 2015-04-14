@@ -2,6 +2,7 @@ package com.parse.starter;
 
 /**
  * Created by Keith
+ * Saves a cache of the images that have been displayed by the app
  */
 import java.io.File;
 import android.content.Context;

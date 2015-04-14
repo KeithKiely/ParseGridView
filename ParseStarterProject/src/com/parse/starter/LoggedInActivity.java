@@ -7,7 +7,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-
+/**
+ * Inflates the activity_logged_in view which allows the user
+ * to browse the different galleries or sign out
+ */
 public class LoggedInActivity extends Activity {
 
     @Override

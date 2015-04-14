@@ -22,6 +22,7 @@ import android.graphics.BitmapFactory;
 import android.widget.ImageView;
 /**
  * Created by Keith
+ * Retreives images from cache first and then parse and displays them in the GridView
  */
 public class ImageLoader {
     MemoryCache memoryCache = new MemoryCache();
